@@ -1,3 +1,6 @@
+/***********************
+reduce Example
+***********************/
 const numbers = [1, -1,2,3];
 // To calculate the sum of all the numbers in the above array
 //Similar to calculating all the items of shopping cart, assuming each numbers is the price of the item ( ignore negative numbers)
@@ -31,4 +34,6 @@ console.log('sum1:', sum1);
 // first argument is a callback function
 //second argument is a call back value . Here it is 0
 //Note: you can do without initialization that is 0
+
+
 
