@@ -174,11 +174,56 @@ console .log('From Companies obj only female', onlyFemales);
 const getFirstName = companies.filter(company => company.first_name.startsWith('C'));
 console .log('firstName starting with C ', getFirstName);
 
+// Get email ends  with .com
 
-
-
+const emailDotCom = companies.filter(company => (company.email.endsWith('.com')) && (company.first_name.startsWith('M')));
+console .log('Email ends with .com and First Name starts with M  ', emailDotCom);
 
 
 //map
+
+//create new arrays of anything from the current array
+//create array of genders
+
+const maleCompanyNames = companies.map(company => `${company.gender} [${company.first_name}]`);
+console.log('Only Gender', maleCompanyNames);
+// if you use arrow no return is required just use template string
+
+// create square root of ages
+
+const agesSquare = ages.map(age => Math.sqrt(age));
+const ageTimesTwo = ages.map(age => age * 2);
+console.log('Age Square, Age Times Two', agesSquare, ageTimesTwo);
+
 //sort
+const sortedNames = companies.sort((a,b) => (a.first_name > b.first_name ? 1 : -1));
+
+console.log('Sorted Names', sortedNames);
+// output > it will sort all the first name by ascending
+
+
+//sort ages
+
+const sortAges = ages.sort((a,b) => a- b);
+// a- b is ascending order
+console.log('sortAges', sortAges);
+
 //reduce
+
+// all ages together
+
+const ageSum =ages.reduce((total, age) => total + age,0 )  ;
+
+// Get total of ids for all companies
+const idTotal = companies.reduce((total,company) => total + company.id, 0 );
+
+console.log(`AgeSum: ${ageSum}, idTotal:${idTotal}`);
+
+// combined of all function examples
+
+const combined = ages.map(age => age * 2)
+    .filter(age => age >=50)
+    .sort((a,b) => a -b)
+    .reduce((a,b) => (a+b), 0);
+
+console.log('combined', combined);
